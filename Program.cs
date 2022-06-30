@@ -17,6 +17,14 @@ namespace Solid_app
             GrossSalaryToNetForWorker worker1 = new GrossSalaryToNetForWorker();
             OrderVat product = new OrderVat();
             Console.WriteLine("worker1 get:"+worker1.Percent(3200)+" zl net\n"+"product netto+ vat:"+product.Percent(40)+" zl");
+            //DIP
+            IDelivery delivery = new Post();
+            CompleteOrder completeOrder = new CompleteOrder(delivery);
+            completeOrder.TakeDelivery();
+            delivery = new GLS();
+            completeOrder = new CompleteOrder(delivery);
+            completeOrder.TakeDelivery();
+          
         }
     }
 }
