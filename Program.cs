@@ -13,7 +13,10 @@ namespace Solid_app
             Console.WriteLine(description.Description());
             description = new Complain();
             Console.WriteLine(description.Description()+"   Customer name: "+description.GetPersonName(Customer1));
-
+            //OCP
+            GrossSalaryToNetForWorker worker1 = new GrossSalaryToNetForWorker();
+            OrderVat product = new OrderVat();
+            Console.WriteLine("worker1 get:"+worker1.Percent(3200)+" zl net\n"+"product netto+ vat:"+product.Percent(40)+" zl");
         }
     }
 }
